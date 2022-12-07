@@ -11,9 +11,12 @@ namespace HousingEstate
         static void Main(string[] args)
         {
 
-            Person Lukas = new Person("Lukas","Cupa",15);
+            Person lukas = new Person("Lukas","Cupa",15);
+            Person samo = new Person("Samo", "Malik", 15);
+            Flat numOne = new Flat(1, 50, 3);
 
-            Console.WriteLine(Lukas.ToString());
+            Console.WriteLine(lukas.ToString());
+            Console.WriteLine(numOne.ToString());
         }
     }
 }
