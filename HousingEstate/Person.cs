@@ -14,6 +14,7 @@ namespace HousingEstate
 
         /// <summary>
         /// Constructors for Person
+        /// 
         /// </summary>
         public Person(string fname, string lname, int age)
         {
