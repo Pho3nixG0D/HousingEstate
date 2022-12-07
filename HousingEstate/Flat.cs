@@ -18,10 +18,21 @@ namespace HousingEstate
             Area = area;
             NumOfRooms = numOfRooms;
         }
-
+        public void AddInhabitant(Person inhabitant)
+        {
+            inhabitants.Add(inhabitant);
+        }
         public override string ToString()
         {
-            return String.Format($"Flat Number: {FlatNum}\nArea: {Area}\nNumber of rooms: {NumOfRooms}");
+            string FlatInhabitants = String.Empty;
+            foreach (var inh in inhabitants)
+            {
+                FlatInhabitants += inh + " ";
+            }
+
+            return String.Format($"Flat Number: {FlatNum}\nArea: " +
+                $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n {FlatInhabitants}");
+
         }
 
 
