@@ -1,0 +1,99 @@
+﻿HousingEstate
+Naprogramujte systém pre sídliská, v ktorom bude možné evidovať 
+obyvateľov žijúcich na danom sídlisku. Do jednotlivých bytov sídliska 
+sa budú môcť ľudia nasťahovať, presťahovať do iného bytu alebo úplne 
+opustiť sídlisko. Pre každý vchod nám bude systém schopný poskytnúť
+údaje o najstaršom a najmladšom obyvateľovi, a tiež vekový priemer 
+všetkých obyvateľov vchodu. To isté sa bude dať pre celý panelák a
+sídlisko. So systémom sa bude dať pracovať pomocou konzoly vďaka menu – 
+napríklad keď používateľ zadá 1 bude môcť pridať obyvateľa do nejakého
+bytu atď. Pre source control použite git. Toto repository nemusíte forkovať. 
+Vytvorte si vlasné.
+
+Používajte angličtinu. Commitujte priebežne a často, aj po malých zmenách.
+
+1. Implementujte triedu Person
+Začnite implementáciou triedy Person, ktorá reprezentuje človeka, 
+je obyvateľom bytu. Každá osoba je charakterizovaná menom, priezviskom a vekom.
+Uvážte použitie fieldov (private premenných triedy) a properties 
+(public premenných triedy). Implementujte metódu na vytvorenie inštancie triedy Person -
+konštruktor. Implementujte metódu ToString(), ktorá vypíše údaje o osobe na kozolu
+V metódte Main triedy Program.cs vytvorte ľubovoľnú inštanciu vytvorenej triedy a
+vyskúšajte funkčnosť metódy ToString().
+
+2. Implementujte triedu Flat
+Implementujte triedu Flat reprezentujúcu byt. Každý byt je označený číslom bytu,
+má svoj rozlohu a počet izieb bytu. Uvážte použitie fieldov
+(private premenných triedy) a properties (public premenných triedy).
+Implementujte metódu na vytvorenie inštancie triedy Flat - konštruktor. 
+V byte môžu bývať osoby (Person). Aby sme sa vždy vedeli ľahko dostať 
+osobám žijúcim v danom byte, každý byt si bude uchovávať zoznam týchto osôb (List).
+Implementujte metódu ToString(), ktorá vypíše údaje o byte 
+- číslo bytu, rozloha a počet izieb. Vyskúšajte v metóde Main vytvoriť nejaký
+byt a vypísať údaje o ňom.
+
+3. Implementujte metódu AddHabitant(Person habitant) triedy Flat
+Upravte triedu Flat tak, aby implementovala metódu AddHabitant(Person habitant)
+typu void, ktorá pridá osobu medzi obyvateľov bytu. V metóde Main vyskúšajte
+vytvoriť niekoľko ďalších osôb a použitím metódy AddHabitant ich pridajte do 
+vytvoreného bytu. Pomocou cyclu vypíšte údaje o všetkých osobách 
+ubytovaných v tomto byte.
+
+4. Implementujte metódu GetInfoAboutAllHabitants() triedy Flat
+Vypisovanie údajov o ubytovaných osobách v byte sa nám hodí aj pri ostatných bytoch
+, nie len pri tomto našom testovacom. Upravte teda triedu Flat tak, aby 
+implementovala metódu GetInfoAboutAllHabitants() typu string, ktorá vypíšte
+údaje o všetkých osobách ubytovaných v danom byte, podobne ako sme to urobili 
+v predchadzajúcej úlohe v metóde Main. Vyskúšajte vypísať údaje o osobách 
+ubytovaných vo vytvorenom byte pomocou metódy GetInfoAboutAllHabitants().
+
+5. Pridajte referenciu na byt triede Person
+Už teda vieme zistiť údaje o osobách, ktoré sú ubytované v nejakom byte. 
+Keby sme teda mali zoznam bytov, vedeli by sme prezrieť každý byt a zistiť 
+si údaje o všetkých osobách v nich ubytovaných. Čo ak by sme ale mali 
+k dispozícii nejakú konkrétnu osobu a chceli by sme zistiť, v ktorom z 
+našich bytov býva? Museli by sme prehľadávať všetky byty a všetky zoznamy 
+osôb, či to náhodou nie je práve ten, ktorého hľadáme. Aby sme 
+sa vyhli takémuto neefektívnemu prezeraniu všetkého, upravme triedu Person 
+tak, aby obsahovala referenciu na byt, v ktorom je ubytovaná
+. V tride Person tiež implementujte metódu GetInfoAboutFlat() typu string, 
+ktorá vypíše údaje o byte, v ktorom je daná osoba ubytovaná. 
+Upravte metódu AddHabitant triedy Flat, aby nastavila práve pridávanému 
+obyvateľovi referenciu na tento byt (this). 
+V metóde Main vyskúšajte implementované metódy.
+
+6. Osloboďte triedu Person
+Čo keby sme chceli systém neskôr rozšíriť aj osoby, ktoré na našom 
+sídlisku pracujú (napr. nejaký správca, upratovačka,...), ale nebývajú 
+v žiadnom z bytov. Nebudú teda potrebovať referenciu na byt
+. Meno, priezvisko a vek ale určite mať budú. Osloboďte triedu Person 
+od závislosti na triede Flat. Nápoveda: Habitant, dedičnosť V metóde 
+Main vyskúšajte implementované zmeny.
+
+7. Rozšírte systém
+Pokračujte podobným spôsobom ďalej. Implementujte triedy Entrance, BlockOfFlats 
+a HousingEstate. Uvážte fieldy, property a metódy
+, ktoré budú jednotlivé triedy potrebovať.
+
+Class Entrance
+Reprezentuje vchod. Každý vchod je označený orientačným číslom, pričom orientačné 
+čísla susedných vchodov sa líšia o 2. Na jednej strane ulice sa zvyknú 
+používať párne čísla a na opačnej strane zasa nepárne. Každý vchod má 
+niekoľko poschodí, na ktorých je istý počet bytov. Okrem toho si každý 
+vchod pamätá, do ktorého paneláku patrí.
+
+Class BlockOfFlats
+Reprezentuje panelák. Každý panelák je označený súpisným číslom a skladá 
+sa z niekoľkých vchodov. Každý panelák sa nachádza na konkrétnej ulici.
+
+Class HousingEstate
+Reprezentuje celé sídlisko, ktoré sa skladá z množiny panelákov.
+
+Dodatočné info
+V testovacom príklade pracujte s nasledujúcimi hodnotami: Počet vchodov 
+paneláku: 12 Počet bytov vchodu:
+14 (7 poschodí, na každom 2 byty) Kapacita bytov: 4
+
+Čo nie je jasné, to si domyslite tak, aby to dávalo zmysel. 
+Čo si nebudete vedieť domyslieť, pýtajte sa.
+
