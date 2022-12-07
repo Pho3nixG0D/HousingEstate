@@ -22,16 +22,22 @@ namespace HousingEstate
         {
             inhabitants.Add(inhabitant);
         }
-        public override string ToString()
+
+        public string GetInfoAboutAllInhabitants()
         {
             string FlatInhabitants = String.Empty;
             foreach (var inh in inhabitants)
             {
                 FlatInhabitants += inh + " ";
             }
+            return FlatInhabitants;
+        }
+        public override string ToString()
+        {
+            
 
             return String.Format($"Flat Number: {FlatNum}\nArea: " +
-                $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n {FlatInhabitants}");
+                $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n {GetInfoAboutAllInhabitants()}");
 
         }
 
