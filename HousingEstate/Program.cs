@@ -15,12 +15,16 @@ namespace HousingEstate
             Person samo = new Person("Samo", "Malik", 15);
             Person romko = new Person("Roman", "Popper", 30);
             Flat numOne = new Flat(1, 50, 3);
+            Flat numTwo = new Flat(2, 100, 4);
             numOne.AddInhabitant(romko);
             numOne.AddInhabitant(samo);
-            numOne.AddInhabitant(lukas);
+            numTwo.AddInhabitant(lukas);
 
 
             Console.WriteLine(numOne.ToString());
+
+
+            Console.WriteLine(lukas.GetInfoAboutFlat());
         }
     }
 }

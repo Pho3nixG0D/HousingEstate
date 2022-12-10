@@ -6,22 +6,32 @@ using System.Threading.Tasks;
 
 namespace HousingEstate
 {
-    internal class Person
+    public class Person
     {
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private int Age { get; set; }
+        //fields
+        private string firstName;
+        private string lastName;
+        private int age;
+        private Flat flatOfPerson;
+        //properties
 
-        /// <summary>
-        /// Constructors for Person
-        /// </summary>
+        public string FirstName { get { return firstName; } set { firstName = value; } }
+        public string LastName { get { return lastName; } set { lastName = value; } }
+        public int Age { get { return age; } set { age = value; } }
+        public Flat FlatOfPerson { get { return flatOfPerson; } set { flatOfPerson = value; } }
+        //constructors
         public Person(string fname, string lname, int age)
         {
             this.FirstName = fname;
             this.LastName = lname;
             this.Age = age;
         }
-
+        //methods
+        public string GetInfoAboutFlat()
+        {
+            return this.flatOfPerson.ToString();
+        }
+        //string override
         public override string ToString()
         {
             return String.Format($" First name: {FirstName}\n Last Name: {LastName}\n Age: {Age}\n");

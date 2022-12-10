@@ -6,21 +6,46 @@ using System.Threading.Tasks;
 
 namespace HousingEstate
 {
-    internal class Flat
+    public class Flat
     {
-        private int FlatNum { get; set; }
-        private int Area { get; set; }
-        private int NumOfRooms { get; set; }
+        //fields
+        private int flatNum;
+        private int area;
+        private int numOfRooms;
         private List<Person> inhabitants = new List<Person>();
+
+        //properties
+        public int FlatNum
+        {
+            get { return flatNum; }
+            set { flatNum = value; }
+        }
+        
+        public int Area
+        {
+            get { return area; }
+            set { area = value; }
+        }
+        public int NumOfRooms
+        {
+            get { return numOfRooms; }
+            set { numOfRooms = value; }
+        }
+
+        //constructor
+
         public Flat(int flatNum, int area, int numOfRooms)
         {
             FlatNum = flatNum;
             Area = area;
             NumOfRooms = numOfRooms;
         }
+
+        //methods
         public void AddInhabitant(Person inhabitant)
         {
             inhabitants.Add(inhabitant);
+            inhabitant.FlatOfPerson = this;
         }
 
         public string GetInfoAboutAllInhabitants()
@@ -32,12 +57,14 @@ namespace HousingEstate
             }
             return FlatInhabitants;
         }
+
+        //string override
         public override string ToString()
         {
             
 
             return String.Format($"Flat Number: {FlatNum}\nArea: " +
-                $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n {GetInfoAboutAllInhabitants()}");
+                $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n{GetInfoAboutAllInhabitants()}");
 
         }
 
