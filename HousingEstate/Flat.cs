@@ -14,7 +14,9 @@ namespace HousingEstate
         private int numOfRooms;
         private List<Person> inhabitants = new List<Person>();
 
+
         //properties
+
         public int FlatNum
         {
             get { return flatNum; }
@@ -42,11 +44,13 @@ namespace HousingEstate
         }
 
         //methods
-        public void AddInhabitant(Person inhabitant)
+        public void AddInhabitant(Inhabitant inhabitant)
         {
             inhabitants.Add(inhabitant);
-            inhabitant.FlatOfPerson = this;
+            inhabitant
+                .FlatOfPerson = this;
         }
+        
 
         public string GetInfoAboutAllInhabitants()
         {

@@ -12,13 +12,11 @@ namespace HousingEstate
         private string firstName;
         private string lastName;
         private int age;
-        private Flat flatOfPerson;
         //properties
 
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string LastName { get { return lastName; } set { lastName = value; } }
         public int Age { get { return age; } set { age = value; } }
-        public Flat FlatOfPerson { get { return flatOfPerson; } set { flatOfPerson = value; } }
         //constructors
         public Person(string fname, string lname, int age)
         {
@@ -27,10 +25,7 @@ namespace HousingEstate
             this.Age = age;
         }
         //methods
-        public string GetInfoAboutFlat()
-        {
-            return this.flatOfPerson.ToString();
-        }
+
         //string override
         public override string ToString()
         {
