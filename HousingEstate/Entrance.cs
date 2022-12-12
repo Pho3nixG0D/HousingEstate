@@ -11,8 +11,8 @@ namespace HousingEstate
     {
         //Fields
         private int numberOfEntrance;
-        private int floorNumber;
         private List<Flat> flatsInEntrance = new List<Flat>();
+        private BlockOfFlats blockOfFlat;
         //Properties
         public int NumberOfEntrance
         {
@@ -20,22 +20,22 @@ namespace HousingEstate
             set { numberOfEntrance = value; }
         }
 
-        public int FloorNumber
+        public BlockOfFlats BlockOfFlat
         {
-            get { return floorNumber; }
-            set {floorNumber = value;}
+            get { return blockOfFlat;}
+            set { blockOfFlat = value;}
         }
         //Constructor
-        public Entrance(int numofent, int flnum)
+        public Entrance(int numofent)
         {
             this.numberOfEntrance = numofent;
-            this.floorNumber = flnum;
         } 
 
         //Methods
         public void AddFlatInEntrance(Flat flt)
         {
             flatsInEntrance.Add(flt);
+            flt.EntranceOfFlat = this;
             
         }
     }

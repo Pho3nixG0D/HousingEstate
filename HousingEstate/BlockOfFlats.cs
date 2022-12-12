@@ -29,6 +29,12 @@ namespace HousingEstate
             this.numberOfBlock = numofblock;
             this.entrancesInBlock.Add(entinblock);
         }
+        //Methods
+        public void AddEntranceToBlock(Entrance entinblc)
+        {
+            this.entrancesInBlock.Add(entinblc);
+            entinblc.BlockOfFlat = this;
+        }
 
   
     }

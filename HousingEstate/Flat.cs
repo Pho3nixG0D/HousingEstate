@@ -13,10 +13,15 @@ namespace HousingEstate
         private int area;
         private int numOfRooms;
         private List<Person> inhabitants = new List<Person>();
+        private Entrance entranceOfFlat;
 
 
         //properties
-
+        public Entrance EntranceOfFlat
+        {
+            get { return entranceOfFlat; }
+            set { entranceOfFlat = value; }
+        }
         public int FlatNum
         {
             get { return flatNum; }
