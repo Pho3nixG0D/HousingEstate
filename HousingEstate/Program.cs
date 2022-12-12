@@ -13,11 +13,15 @@ namespace HousingEstate
             //inhabitants
             Inhabitant lukas = new Inhabitant("Lukas","Cupa",16);
             Inhabitant samo = new Inhabitant("Samo", "Malik", 3);
-            Inhabitant romko = new Inhabitant("Roman", "Popper", 30);
+            Inhabitant romko = new Inhabitant("Roman", "Popper", 28);
             Inhabitant kubko = new Inhabitant("Jakub", "Chalupka", 15);
             Inhabitant marko = new Inhabitant("Marko", "Jantula", 15);
             Inhabitant matus = new Inhabitant("Matus", "Nekoranec", 15);
             Inhabitant misko = new Inhabitant("Michal", "Bernát", 16);
+            Inhabitant jozko = new Inhabitant("Jozo", "SpodOravy", 16);
+            Inhabitant peto = new Inhabitant("Peter", "Odrobinak", 3);
+            Inhabitant sameAsRoman = new Inhabitant("Martin", "Popper", 28);
+            Inhabitant jakub = new Inhabitant("Jakub", "Mikus", 15);
 
             //flats
             Flat numOne = new Flat(1, 50, 3);
@@ -34,31 +38,48 @@ namespace HousingEstate
             Flat numTwelve = new Flat(12, 100, 4);
             Flat numThirteen = new Flat(13, 50, 3);
             Flat numFourteen = new Flat(14, 100, 4);
-
             //Entrances
-            Entrance flatOne = new Entrance()
-
-
+            Entrance entOne = new Entrance(1);
+            Entrance entTwo = new Entrance(2);
+            Entrance entThree = new Entrance(3);
             //BlocksOfFlats
-            BlockOfFlats BoF1 = new BlockOfFlats(1,)
+            BlockOfFlats BoF1 = new BlockOfFlats(1);
+            BlockOfFlats BoF2 = new BlockOfFlats(2);
 
-
-
-
-
-            numOne.AddInhabitant(romko);
+            numOne.AddInhabitant(lukas);
             numOne.AddInhabitant(samo);
-            numTwo.AddInhabitant(lukas);
+            numTwo.AddInhabitant(romko);
+            numThree.AddInhabitant(kubko);
+            numFour.AddInhabitant(marko);
+            numFive.AddInhabitant(matus);
+            numSix.AddInhabitant(misko);
+            numSeven.AddInhabitant(jozko);
+            numEight.AddInhabitant(peto);
+            numNine.AddInhabitant(sameAsRoman);
+            numTen.AddInhabitant(jakub);
+
+            entOne.AddFlatInEntrance(numOne);
+            entOne.AddFlatInEntrance(numTwo);
+            entOne.AddFlatInEntrance(numThree);
+            entTwo.AddFlatInEntrance(numFour);
+            entTwo.AddFlatInEntrance(numNine);
+            entThree.AddFlatInEntrance(numFive);
+            entThree.AddFlatInEntrance(numSix);
+            entThree.AddFlatInEntrance(numSeven);
+            entThree.AddFlatInEntrance(numEight);
+            entThree.AddFlatInEntrance(numTen);
+
+            BoF1.AddEntranceToBlock(entOne);
+            BoF2.AddEntranceToBlock(entTwo);
+            BoF2.AddEntranceToBlock(entThree);
+
+            Console.WriteLine(BoF1);
+            Console.WriteLine(BoF2);
 
 
-            
 
 
 
-            Console.WriteLine(numOne.ToString());
-
-
-            Console.WriteLine(lukas.GetInfoAboutFlat());
         }
     }
 }

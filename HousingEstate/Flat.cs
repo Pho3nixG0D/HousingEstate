@@ -71,7 +71,8 @@ namespace HousingEstate
         {
             
 
-            return String.Format($"Flat Number: {FlatNum}\nArea: " +
+           
+           return String.Format($"Flat Number: {FlatNum}\nArea: " +
                 $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n{GetInfoAboutAllInhabitants()}");
 
         }

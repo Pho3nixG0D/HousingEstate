@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,22 @@ namespace HousingEstate
             flatsInEntrance.Add(flt);
             flt.EntranceOfFlat = this;
             
+        }
+        public string GetInfoAboutEntrance()
+        {
+            string flatInEntrance = string.Empty;
+            foreach (var flat in flatsInEntrance)
+            {
+                flatInEntrance += flat + " ";
+            }
+            return flatInEntrance;
+        }
+
+        //Tostring override
+        public override string ToString()
+        {
+            return String.Format($"Number of Entrance: {this.numberOfEntrance}\n" +
+                $"Flats in Entrance:\n {GetInfoAboutEntrance()}");
         }
     }
 }
