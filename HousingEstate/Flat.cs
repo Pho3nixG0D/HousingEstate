@@ -47,8 +47,7 @@ namespace HousingEstate
         public void AddInhabitant(Inhabitant inhabitant)
         {
             inhabitants.Add(inhabitant);
-            inhabitant
-                .FlatOfPerson = this;
+            inhabitant.FlatOfPerson = this;
         }
         
 
