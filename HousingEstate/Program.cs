@@ -15,7 +15,7 @@ namespace HousingEstate
             Inhabitant samo = new Inhabitant("Samo", "Malik", 3);
             Inhabitant romko = new Inhabitant("Roman", "Popper", 28);
             Inhabitant kubko = new Inhabitant("Jakub", "Chalupka", 15);
-            Inhabitant marko = new Inhabitant("Marko", "Jantula", 15);
+            Inhabitant marko = new Inhabitant("Marko", "Jantula", 16);
             Inhabitant matus = new Inhabitant("Matus", "Nekoranec", 15);
             Inhabitant misko = new Inhabitant("Michal", "Bernát", 16);
             Inhabitant jozko = new Inhabitant("Jozo", "SpodOravy", 16);
