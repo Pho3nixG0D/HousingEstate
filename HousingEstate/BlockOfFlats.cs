@@ -12,7 +12,11 @@ namespace HousingEstate
         private int numberOfBlock;
         private Entrance blockOfEntrance;
         private List<Entrance> entrancesInBlock = new List<Entrance>();
+        private HousingEstate housingOfBlock;
+
+
         //Properties
+  
         public int NumberOfBlock
         {
             get { return numberOfBlock; }
@@ -23,11 +27,18 @@ namespace HousingEstate
             get { return blockOfEntrance; }
             set { blockOfEntrance = value; }
         }
+        public HousingEstate HousingOfBlock
+        {
+            get { return housingOfBlock; }
+            set { housingOfBlock = value; }
+        }
         //Constructor
         public BlockOfFlats(int numofblock)
         {
             this.numberOfBlock = numofblock;
-        }
+            
+
+         }
         //Methods
         public void AddEntranceToBlock(Entrance entinblc)
         {

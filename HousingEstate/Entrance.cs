@@ -12,6 +12,7 @@ namespace HousingEstate
     {
         //Fields
         private int numberOfEntrance;
+        private int numoffloors;
         private List<Flat> flatsInEntrance = new List<Flat>();
         private BlockOfFlats blockOfFlat;
         //Properties
@@ -20,6 +21,11 @@ namespace HousingEstate
             get { return numberOfEntrance; }
             set { numberOfEntrance = value; }
         }
+        public int NumOffloors
+        {
+            get { return numoffloors; }
+            set { numoffloors = value; }
+        }
 
         public BlockOfFlats BlockOfFlat
         {
@@ -27,9 +33,10 @@ namespace HousingEstate
             set { blockOfFlat = value;}
         }
         //Constructor
-        public Entrance(int numofent)
+        public Entrance(int numofent, int numberoffloors)
         {
             this.numberOfEntrance = numofent;
+            this.numoffloors = numberoffloors;
         } 
 
         //Methods

@@ -48,6 +48,7 @@
     <Compile Include="Flat.cs" />
     <Compile Include="HousingEstate.cs" />
     <Compile Include="Inhabitant.cs" />
+    <Compile Include="menu.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

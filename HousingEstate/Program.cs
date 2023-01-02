@@ -10,6 +10,12 @@ namespace HousingEstate
     {
         static void Main(string[] args)
         {
+            bool showMenu = true;
+            while (showMenu)
+            {
+                showMenu = menu.MainMenu();
+            }
+            /*
             //inhabitants
             Inhabitant lukas = new Inhabitant("Lukas","Cupa",16);
             Inhabitant samo = new Inhabitant("Samo", "Malik", 3);
@@ -22,6 +28,7 @@ namespace HousingEstate
             Inhabitant peto = new Inhabitant("Peter", "Odrobinak", 3);
             Inhabitant sameAsRoman = new Inhabitant("Martin", "Popper", 28);
             Inhabitant jakub = new Inhabitant("Jakub", "Mikus", 15);
+
 
             //flats
             Flat numOne = new Flat(1, 50, 3);
@@ -74,9 +81,9 @@ namespace HousingEstate
             BoF2.AddEntranceToBlock(entThree);
 
             Console.WriteLine(BoF1);
-            Console.WriteLine(BoF2);
+            //Console.WriteLine(BoF2);
 
-
+            */
 
 
 
