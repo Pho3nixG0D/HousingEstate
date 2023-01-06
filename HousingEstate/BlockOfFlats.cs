@@ -33,11 +33,9 @@ namespace HousingEstate
             set { housingOfBlock = value; }
         }
         //Constructor
-        public BlockOfFlats(int numofblock)
+        public BlockOfFlats( int numofblock)
         {
             this.numberOfBlock = numofblock;
-            
-
          }
         //Methods
         public void AddEntranceToBlock(Entrance entinblc)
@@ -47,20 +45,18 @@ namespace HousingEstate
         }
 
 
-        public string GetInfoAboutBoF()
+        public void GetInfoAboutBoF()
         {
-            string entinblock = String.Empty;
-            foreach (var x in this.entrancesInBlock)
+            foreach (var aPart in entrancesInBlock)
             {
-                entinblock += x + " ";
+                Console.WriteLine(aPart.ToString());
             }
-            return entinblock;
         }
         //string override tostring
-
+       
         public override string ToString()
         {
-            return String.Format($"Number Of Block: {this.numberOfBlock}\nEntrances in Block:\n {GetInfoAboutBoF()}");
+            return String.Format($"Number Of Block: {this.numberOfBlock}");//Entrances in Block:\n {GetInfoAboutBoF()
         }
 
 

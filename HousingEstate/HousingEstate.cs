@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HousingEstate
 {
@@ -14,7 +15,7 @@ namespace HousingEstate
 
 
         //Properties
-        public string NameOfHousingEstete
+        public string NameOfHousingEstate
         {
             get { return nameOfHousingEstate; }
             set { nameOfHousingEstate = value; }
@@ -34,27 +35,31 @@ namespace HousingEstate
             
         }
         //methods 
-        public void AddBlock(BlockOfFlats block)
+
+            
+
+     
+        public void AddBlockInHousing(BlockOfFlats block)
         {
             this.blocks.Add(block);
             block.HousingOfBlock = this;
         }
-        public string WriteBlocks()
+         public void GetInfoAboutBlock()
         {
-
-            string blocksinhousing = String.Empty;
-            foreach (var x in this.blocks)
+            foreach (var aPart in this.blocks)
             {
-                blocksinhousing += x + " ";
+                Console.WriteLine(aPart);
             }
-            return blocksinhousing;
-        }
-        //string override tostring
+            //return String.Format($"Number Of Block: {res}");
 
-        public override string ToString()
-        {
-            return String.Format($"Blocks:\n {WriteBlocks()}");
         }
-    
+  
+       /* public override string ToString()
+        {
+            return ;
+
+        }
+        */
+
     }
 }

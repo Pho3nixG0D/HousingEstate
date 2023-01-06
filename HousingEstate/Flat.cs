@@ -69,9 +69,6 @@ namespace HousingEstate
         //string override
         public override string ToString()
         {
-            
-
-           
            return String.Format($"Flat Number: {FlatNum}\nArea: " +
                 $"{Area}\nNumber of rooms: {NumOfRooms}\nInhabitants:\n{GetInfoAboutAllInhabitants()}");
 
