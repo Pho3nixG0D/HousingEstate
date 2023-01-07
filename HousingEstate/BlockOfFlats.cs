@@ -17,6 +17,11 @@ namespace HousingEstate
 
         //Properties
   
+        public List<Entrance> EntrancesInBlock
+        {
+            get { return entrancesInBlock; }
+            set { entrancesInBlock = value; }
+        }
         public int NumberOfBlock
         {
             get { return numberOfBlock; }
@@ -45,12 +50,14 @@ namespace HousingEstate
         }
 
 
-        public void GetInfoAboutBoF()
+        public string GetInfoAboutBoF()
         {
+            string res = "";
             foreach (var aPart in entrancesInBlock)
             {
-                Console.WriteLine(aPart.ToString());
+                res += aPart.ToString();
             }
+            return res;
         }
         //string override tostring
        

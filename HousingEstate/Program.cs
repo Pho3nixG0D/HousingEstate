@@ -75,7 +75,18 @@ namespace HousingEstate
                         option2(housing.Blocks[pair.Index]);
                         break;
                     case 3://creating flat
-                        option3();
+                        Console.WriteLine("Write number of block where you want to create Flat");
+                        name = Convert.ToInt32(Console.ReadLine());
+                        var pair2 = housing.Blocks.Select((Value, Index) => new { Value, Index })
+                        .Single(p => p.Value.NumberOfBlock == name);
+                        Console.WriteLine("Write number of Entrance where you want to create Flat");
+
+                        int name2 = Convert.ToInt32(Console.ReadLine());
+                        var pair3 = pair2.Value.EntrancesInBlock.Select((Value, Index) => new { Value, Index })
+                        .Single(p => p.Value.NumberOfEntrance == name2);
+
+
+                        option3(pair2.Value.EntrancesInBlock[pair3.Index]);
                         break;
                     case 4://creating person
                         option4();
@@ -125,6 +136,9 @@ namespace HousingEstate
                                     name = Convert.ToInt32(Console.ReadLine());
                                     var pair1 = housing.Blocks.Select((Value, Index) => new { Value, Index })
                                     .Single(p => p.Value.NumberOfBlock == name);
+                                    Console.WriteLine("Write a number of Entrace in BoF");
+
+                                    
                                     option02(housing.Blocks[pair1.Index]); 
                                 break;
                             case 3:
@@ -168,13 +182,23 @@ namespace HousingEstate
             int numOfEnt = int.Parse(Console.ReadLine());
             int NumOfFloors = int.Parse(Console.ReadLine());
             block.AddEntranceToBlock(new Entrance(numOfEnt, NumOfFloors));
-            Console.WriteLine("You successfully created a Flat {0} with {1} floors", numOfEnt, NumOfFloors);
+            Console.WriteLine("You successfully created an Entrance {0} with {1} floors", numOfEnt, NumOfFloors);
             System.Threading.Thread.Sleep(3000);
         }
         
-        private static void option3()
+        private static void option3(Entrance entrance)
         {
-            Console.WriteLine("Executing option 1");
+
+            Console.WriteLine("Finaly, write number of a flat");
+            int flatnum = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write an area of flat");
+            int area = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write a number of rooms in a flat");
+            int numofrooms = int.Parse(Console.ReadLine());
+            entrance.AddFlatInEntrance(new Flat(flatnum, area, numofrooms));
+            Console.WriteLine("You successfully created a Flat {0} with area of {1} and {2} rooms", flatnum, area, numofrooms);
+            System.Threading.Thread.Sleep(3000);
+
         }
         private static void option4()
         {
@@ -194,7 +218,7 @@ namespace HousingEstate
         }
         private static void option02(BlockOfFlats blockOfFlats)
         {
-            blockOfFlats.GetInfoAboutBoF();
+            Console.WriteLine(blockOfFlats.GetInfoAboutBoF());
             System.Threading.Thread.Sleep(5000);
             Console.ReadLine();
 

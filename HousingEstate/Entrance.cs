@@ -16,6 +16,10 @@ namespace HousingEstate
         private List<Flat> flatsInEntrance = new List<Flat>();
         private BlockOfFlats blockOfFlat;
         //Properties
+        public List<Flat> FlatsInEntrance
+        {
+            get { return this.flatsInEntrance; }
+            set { flatsInEntrance = value;  } }
         public int NumberOfEntrance
         {
             get { return numberOfEntrance; }
