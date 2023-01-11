@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace HousingEstate
 {
-    public class HousingEstate
+    public class Housingestate
     {
         //Fields
         private string nameOfHousingEstate;
@@ -29,7 +29,7 @@ namespace HousingEstate
 
 
         //constructor 
-        public HousingEstate(string nameofhousing)
+        public Housingestate(string nameofhousing)
         {
             this.nameOfHousingEstate= nameofhousing;
             

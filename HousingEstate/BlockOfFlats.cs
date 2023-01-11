@@ -12,7 +12,7 @@ namespace HousingEstate
         private int numberOfBlock;
         private Entrance blockOfEntrance;
         private List<Entrance> entrancesInBlock = new List<Entrance>();
-        private HousingEstate housingOfBlock;
+        private Housingestate housingOfBlock;
 
 
         //Properties
@@ -32,7 +32,7 @@ namespace HousingEstate
             get { return blockOfEntrance; }
             set { blockOfEntrance = value; }
         }
-        public HousingEstate HousingOfBlock
+        public Housingestate HousingOfBlock
         {
             get { return housingOfBlock; }
             set { housingOfBlock = value; }

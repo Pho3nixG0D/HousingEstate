@@ -46,7 +46,7 @@
     <Compile Include="BlockOfFlats.cs" />
     <Compile Include="Entrance.cs" />
     <Compile Include="Flat.cs" />
-    <Compile Include="HousingEstate.cs" />
+    <Compile Include="Housingestate.cs" />
     <Compile Include="Inhabitant.cs" />
     <Compile Include="menu.cs" />
     <Compile Include="Person.cs" />
